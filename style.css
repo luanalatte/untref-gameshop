@@ -35,12 +35,13 @@ body > footer {
 }
 
 body > footer > :first-child {
-    padding-block: 4.25rem;
-    padding-inline: 75px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 68px 75px;
 }
 
-body > main > section:not(#slide) {
-    margin-inline: 3rem;
+section {
+    margin: 85px 3rem;
 }
 
 #slide {
@@ -64,7 +65,7 @@ body > main > section:not(#slide) {
     font-weight: 700;
 }
 
-[role="button"] {
+a[role="button"] {
     display: inline-block;
     background-color: #D01418;
     padding: 1rem 3.8rem;
@@ -75,8 +76,12 @@ body > main > section:not(#slide) {
     text-decoration: none;
 }
 
-.brand {
-    flex-grow: 1;
+h2 {
+    font-size: 1.875rem;
+    font-weight: 400;
+    margin-top: 1.875rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
 }
 
 .brand a {
@@ -96,17 +101,23 @@ body > main > section:not(#slide) {
 
 nav {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
-nav > ul {
+footer nav {
+    flex-direction: column;
+}
+
+nav ul {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.5rem;
 }
 
-nav > ul > li {
+nav li {
     list-style: none;
 }
 
@@ -121,62 +132,35 @@ nav a {
     color: #D01418;
 }
 
-#products {
-    text-align: center;
-    margin-bottom: 5.3125rem;
-}
-
-.card {
+article {
     background-color: #fff;
     width: 265px;
+    text-align: center;
 }
 
-.card img {
+article img {
     margin: 1.5rem;
     max-width: 129px;
 }
 
-.card footer {
+article footer {
     border-top: 1px solid #ddd;
     padding: 1.25rem;
     text-align: start;
     display: flex;
     flex-direction: column;
+    gap: 3px;
     margin-inline: 2px;
 }
 
-.card .price {
-    font-size: 1.25em;
-}
-
-.card .payment {
-    font-size: 0.8125em;
-}
-
-.card .free-shipping {
-    font-size: 0.625em;
-    color: #619D00;
-}
+article footer :first-child { font-size: 1.25em; }
+article footer :nth-child(2) { font-size: 0.8125em; }
+article footer :nth-child(3) { font-size: 0.625em; color: #619D00; }
 
 .flex {
     display: flex;
     flex-wrap: wrap;
     gap: 1.875rem;
-}
-
-#products .flex {
-    justify-content: center;
-}
-
-h2 {
-    font-size: 1.875rem;
-    font-weight: 400;
-    margin-top: 1.875rem;
-    margin-bottom: 1.25rem;
-}
-
-#popular {
-    text-align: center;
 }
 
 .social {
@@ -185,17 +169,9 @@ h2 {
     font-size: 1.5rem;
 }
 
-.social .flex {
+.social ul {
     margin-top: 1.25rem;
-}
-
-.j-center {
-    justify-content: center;
-    align-items: center;
-}
-
-.j-between {
-    justify-content: space-between;
+    gap: 1.875rem;
 }
 
 .copyright {
@@ -211,21 +187,26 @@ h2 {
     display: flex;
     justify-content: end;
     align-items: center;
-    padding: 10px;
+    padding: 0.625rem;
     color: white;
     background-size: cover;
     border-radius: 5px;
-}
-
-.banner h3 {
     font-size: 1.5rem;
     font-weight: 400;
+    text-decoration: none;
 }
 
-#popular {
-    margin-bottom: 5.3125rem;
+#products .flex {
+    justify-content: center;
 }
 
 #popular .flex {
-    gap: 1.875rem 114px;
+    column-gap: 114px;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    footer nav {
+        flex-direction: row;
+    }
 }
