@@ -29,6 +29,7 @@ body > header {
     color: white;
 }
 
+
 body > footer {
     background-color: #222;
     margin-top: auto;
@@ -115,6 +116,10 @@ nav ul {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+}
+
+header nav ul {
+    display: none;
 }
 
 nav li {
@@ -206,6 +211,14 @@ article footer :nth-child(3) { font-size: 0.625em; color: #619D00; }
 }
 
 @media (min-width: 768px) {
+    header nav ul {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
     footer nav {
         flex-direction: row;
     }
